@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> ewww! 🌈</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #e8f5e9;
+    }
+    h1 {
+      color: #2e7d32;
+      margin-bottom: 20px;
+    }
+    img {
+      max-width: 300px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+    audio {
+      display: none; /* hide audio controls */
+    }
+  </style>
+</head>
+<body>
+  <h1>🌈 eww nigga, i knew it !!!!</h1>
+
+  <!-- Centered picture -->
+  <img src="https://media.tenor.com/hw5JS3jy6DMAAAAM/cat-cat-meme.gif" alt="Celebration Image">
+
+  <!-- Background music -->
+  <audio id="bg-music" autoplay loop>
+    <source src="ReelAudio-94229.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // Play only if "play=true" was passed from index.html
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get("play") === "true") {
+      const music = document.getElementById("bg-music");
+      music.play().catch(() => {
+        console.log("Autoplay blocked by browser. User must tap.");
+      });
+    }
+  </script>
+</body>
+</html>
